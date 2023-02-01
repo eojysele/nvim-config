@@ -23,8 +23,6 @@ local bundles = {
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-
-
 local config = {
     flags = {
             debounce_text_changes = 80,
@@ -85,6 +83,10 @@ local config = {
                     {
                         name = "JavaSE-17",
                         path = "/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home"
+                    },
+                    {
+                        name = "JavaSE-11",
+                        path = "/Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home"
                     }
                 }
             }
@@ -109,4 +111,3 @@ local config = {
 }
 
 jdtls.start_or_attach(config)
-
