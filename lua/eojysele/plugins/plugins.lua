@@ -6,7 +6,7 @@ require("lualine").setup {
   options = { theme = 'dracula' },
 }
 require("eojysele.plugins.nvim-treesitter")
-require("indent_blankline").setup {}
+require("eojysele.plugins.nvim-indent-blankline")
 require("gitsigns").setup()
 
 require("symbols-outline").setup {
