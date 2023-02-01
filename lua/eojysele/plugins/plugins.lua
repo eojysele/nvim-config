@@ -2,9 +2,7 @@ require("mason").setup()
 
 require'nvim-web-devicons'.setup {}
 require("eojysele.plugins.nvim-tree")
-require("lualine").setup {
-  options = { theme = 'dracula' },
-}
+require("eojysele.plugins.nvim-lualine")
 require("eojysele.plugins.nvim-treesitter")
 require("eojysele.plugins.nvim-indent-blankline")
 require("gitsigns").setup()
