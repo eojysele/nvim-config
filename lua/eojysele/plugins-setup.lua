@@ -30,11 +30,15 @@ return packer.startup(function(use)
     use ("wbthomason/packer.nvim")
     use { "williamboman/mason.nvim" }
 
-    use 'Mofiqul/dracula.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
     use 'nvim-tree/nvim-web-devicons'
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+    use {'akinsho/bufferline.nvim', 
+        tag = "v3.*", 
+        requires = 'nvim-tree/nvim-web-devicons'
     }
 
     use {
@@ -52,6 +56,9 @@ return packer.startup(function(use)
     }  
     use "lukas-reineke/indent-blankline.nvim"
     use {'lewis6991/gitsigns.nvim'}
+    use { 'sindrets/diffview.nvim', 
+        requires = 'nvim-lua/plenary.nvim' 
+    }
     use 'simrat39/symbols-outline.nvim'
 
     use {
@@ -76,6 +83,11 @@ return packer.startup(function(use)
 
     use {"windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
+    }
+    use {'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
     }
 
     if packer_bootstrap then
