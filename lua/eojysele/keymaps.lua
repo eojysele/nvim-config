@@ -95,9 +95,9 @@ function P.java_key_map(bufnr)
 end
 
 -- Spring Boot App
-key_map("n", "<leader>da", function() require"eojysele.auxiliary-scripts.language.java.run-spring-app".attach_to_debug() end) -- attach to debug
-key_map("n", "<F9>", function() require'eojysele.auxiliary-scripts.language.java.run-spring-app'.run_spring_boot() end) -- run 
-key_map("n", "<F10>", function() require"eojysele.auxiliary-scripts.language.java.run-spring-app".run_spring_boot(true) end) -- run in debug
-
+local spring_app = require('eojysele.auxiliary-scripts.language.java.run-spring-app')
+key_map("n", "<leader>da", function() spring_app.attach_to_debug() end) -- attach to debug
+key_map("n", "<F9>", function() spring_app.run_spring_boot() end) 
+key_map("n", "<F10>", function() spring_app.run_spring_boot(true) end) -- run in debug
 
 return P
