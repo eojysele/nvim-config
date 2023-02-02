@@ -3,6 +3,7 @@ require("mason").setup()
 require'nvim-web-devicons'.setup {}
 require("eojysele.plugins.nvim-tree")
 require("eojysele.plugins.nvim-lualine")
+require("eojysele.plugins.nvim-bufferline")
 require("eojysele.plugins.nvim-treesitter")
 require("eojysele.plugins.nvim-indent-blankline")
 require("gitsigns").setup()
