@@ -75,11 +75,12 @@ key_map("n", "<leader>fx", "<cmd>Telescope diagnostics bufnr=0<CR>") -- Find imp
 
 -- Java
 function P.java_key_map(bufnr)
-    key_map("n","gd", vim.lsp.buf.definition) -- go to definition
-    key_map("n","gD", vim.lsp.buf.declaration) -- go to declaration
+    key_map("n", "gd", vim.lsp.buf.definition) -- go to definition
+    key_map("n", "gD", vim.lsp.buf.declaration) -- go to declaration
+    key_map("n", "gr", vim.lsp.buf.references)
     key_map("n", "gi", vim.lsp.buf.implementation) -- go to implementation
     key_map("n", "K", vim.lsp.buf.hover) -- hover text
-    key_map("n","<C-k>", vim.lsp.buf.signature_help) -- show signature
+    key_map("n", "<C-k>", vim.lsp.buf.signature_help) -- show signature
     key_map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder) -- add workspace folder
     key_map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder) -- remove workspace folder
     key_map("n", "<leader>wl", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end) --list workspace folder
@@ -88,9 +89,9 @@ function P.java_key_map(bufnr)
     key_map("n", "<leader>ca", vim.lsp.buf.code_action) -- code actions
     key_map("v", "<leader>ca", "<ESC><CMD>lua vim.lsp.buf.range_code_action()<CR>")
     key_map("n", '<leader>f', function() vim.lsp.buf.format { async = true } end) -- format file
-    key_map("n","<C-o>", jdtls.organize_imports) -- organize imports
-    key_map("n","<leader>ev", jdtls.extract_variable) -- extract variable
-    key_map("n","<leader>ec", jdtls.extract_constant) -- extract constant
+    key_map("n", "<C-o>", jdtls.organize_imports) -- organize imports
+    key_map("n", "<leader>ev", jdtls.extract_variable) -- extract variable
+    key_map("n", "<leader>ec", jdtls.extract_constant) -- extract constant
     key_map("v", "<leader>em", [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]]) -- extract method
 end
 
