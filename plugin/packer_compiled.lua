@@ -171,6 +171,11 @@ _G.packer_plugins = {
     path = "/Users/eojysele/.local/share/nvim/site/pack/packer/start/nvim-jdtls",
     url = "https://github.com/mfussenegger/nvim-jdtls"
   },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/Users/eojysele/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/Users/eojysele/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
