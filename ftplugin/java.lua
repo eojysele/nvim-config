@@ -1,15 +1,17 @@
 local home = os.getenv('HOME')
 local jdtls = require('jdtls')
 
+local nvim_home = vim.fn.stdpath('data')
+local jdtls_path = nvim_home .. "/mason/packages/jdtls"
+local path_to_config = jdtls_path .. "/config_mac"
+local path_to_plugins = jdtls_path .. "/plugins"
+local path_to_jar_jdtls = path_to_plugins .. "/org.eclipse.equinox.launcher_*.jar"
+local path_to_lombok = jdtls_path .. "/lombok.jar"
+
+
 local root_markers = {'gradlew', 'mvnw', '.git'}
 local root_dir = require('jdtls.setup').find_root(root_markers)
-
 local workspace_folder = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
-
-function nnoremap(rhs, lhs, bufopts, desc)
-    bufopts.desc = desc
-    vim.keymap.set("n", rhs, lhs, bufopts)
-end
 
 local on_attach = function(client, bufnr)
     require'eojysele.keymaps'.java_key_map(bufnr);
@@ -38,14 +40,33 @@ local config = {
         root_dir = root_dir,
         settings = {
             java = {
+                eclipse = {
+                    downloadSources = true,
+                },
+                maven = {
+                    downloadSources = true,
+                },
+                implementationsCodeLens = {
+                    enabled = true,
+                },
+                referencesCodeLens = {
+                    enabled = true,
+                },
+                references = {
+                    includeDecompiledSources = true,
+                },
                 format = {
                     settings = {
                         url = home .. "/.config/nvim/code-styles/intellij-java-google-style.xml",
                         profile = "GoogleStyle",
                     },
                 },
-                signatureHelp = { enabled = true },
-                contentProvider = { preferred = 'fernflower' },
+                signatureHelp = { 
+                    enabled = true 
+                },
+                contentProvider = { 
+                    preferred = 'fernflower' 
+                },
                 completion = {
                     favoriteStaticMembers = {
                         "org.hamcrest.MatcherAssert.assertThat",
@@ -56,11 +77,11 @@ local config = {
                         "java.util.Objects.requireNonNullElse",
                         "org.mockito.Mockito.*"
                     },
-                    filteredTypes = {
-                        "com.sun.*",
-                        "io.micrometer.shaded.*",
-                        "java.awt.*",
-                        "jdk.*", "sun.*",
+                    importOrder = {
+                        "java",
+                        "javax",
+                        "com",
+                        "org"
                     },
                 },
             sources = {
@@ -103,9 +124,9 @@ local config = {
         '--add-modules=ALL-SYSTEM',
         '--add-opens', 'java.base/java.util=ALL-UNNAMED',
         '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-        '-javaagent:' .. home .. '/.local/share/nvim/mason/packages/jdtls/lombok.jar',
-        '-jar', vim.fn.glob(home .. '/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar'),
-        '-configuration', home .. '/.local/share/nvim/mason/packages/jdtls/config_mac',
+        '-javaagent:' .. path_to_lombok,
+        '-jar', vim.fn.glob(path_to_jar_jdtls),
+        '-configuration', path_to_config,
         '-data', workspace_folder,
     },
 }
