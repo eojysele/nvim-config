@@ -15,8 +15,12 @@ end
 -- Window management
 -- Splits
 key_map("n", "<leader>sv", "<C-w>v") -- split window vertically
-key_map("n", "<leader>sh", "<C-w>s") -- split window horizontally
+key_map("n", "<leader>ss", "<C-w>s") -- split window horizontally
 key_map("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
+key_map("n", "<leader>sj", "<C-w>j") -- to lower split
+key_map("n", "<leader>sk", "<C-w>k") -- to upper split
+key_map("n", "<leader>sh", "<C-w>h") -- to left split
+key_map("n", "<leader>sl", "<C-w>l") -- to right split
 key_map("n", "<leader>sx", ":close<CR>") -- close current split window
 
 -- Tabs
