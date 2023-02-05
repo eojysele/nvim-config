@@ -68,6 +68,7 @@ return packer.startup(function(use)
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   
     use 'neovim/nvim-lspconfig'
+    use "williamboman/mason-lspconfig.nvim"
 
     use 'hrsh7th/nvim-cmp'
     use("hrsh7th/cmp-buffer")
@@ -78,10 +79,6 @@ return packer.startup(function(use)
 
     use 'mfussenegger/nvim-dap'
     use 'mfussenegger/nvim-jdtls'
-  
-    use("L3MON4D3/LuaSnip")
-    use("saadparwaiz1/cmp_luasnip")
-    use("rafamadriz/friendly-snippets")
 
     use {"windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
