@@ -115,6 +115,11 @@ _G.packer_plugins = {
     path = "/Users/eojysele/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
   },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/eojysele/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/eojysele/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
