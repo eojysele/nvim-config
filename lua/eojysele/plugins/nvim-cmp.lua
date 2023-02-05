@@ -4,7 +4,6 @@ cmp.setup {
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help' },
         { name = 'vsnip' },
-        { name = 'luasnip'}, -- lua
     },
     snippet = {
         expand = function(args)

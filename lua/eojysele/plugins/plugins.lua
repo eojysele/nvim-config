@@ -1,4 +1,5 @@
 require("mason").setup()
+require("mason-lspconfig").setup()
 
 require'nvim-web-devicons'.setup {}
 require("eojysele.plugins.nvim-tree")
@@ -13,5 +14,6 @@ require("symbols-outline").setup {
 }
 
 require("dap.ext.vscode").load_launchjs()
+require("eojysele.plugins.nvim-lspconfig")
 require("eojysele.plugins.nvim-cmp")
 require("eojysele.plugins.nvim-telescope")
