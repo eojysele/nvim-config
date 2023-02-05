@@ -13,27 +13,18 @@ end
 --------------------------
 -- Window management
 -- Splits
-key_map("n", "<leader>sv", "<C-w>v") -- split window vertically
-key_map("n", "<leader>ss", "<C-w>s") -- split window horizontally
-key_map("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
+key_map("n", "<leader>v", "<C-w>v") -- split window vertically
+key_map("n", "<leader>h", "<C-w>s") -- split window horizontally
+key_map("n", "<leader>s=", "<C-w>=") -- make split windows equal width & height
 key_map("n", "<leader>sj", "<C-w>j") -- to lower split
 key_map("n", "<leader>sk", "<C-w>k") -- to upper split
 key_map("n", "<leader>sh", "<C-w>h") -- to left split
 key_map("n", "<leader>sl", "<C-w>l") -- to right split
 key_map("n", "<leader>sx", ":close<CR>") -- close current split window
 
--- Tabs
-key_map("n", "<leader>to", ":tabnew<CR>") -- open new tab
-key_map("n", "<leader>tx", ":tabclose<CR>") -- close current tab
-key_map("n", "<leader>tn", ":tabn<CR>") --  go to next tab
-key_map("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
-
 -- Buffers
 key_map("n", "<leader>bp", ":bprev<CR>") -- go to prev buffer
 key_map("n", "<leader>bn", ":bnext<CR>") -- go to next buffer
-
--- Vim-maximizer
-key_map("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
 -- Nvim-tree
 key_map("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
@@ -55,7 +46,6 @@ key_map("n", "<leader>D", vim.lsp.buf.type_definition) -- go to type definition
 key_map("n", "<leader>rn", vim.lsp.buf.rename) --rename
 key_map("n", "<leader>ca", vim.lsp.buf.code_action) -- code actions
 key_map("n", '<leader>f', function() vim.lsp.buf.format { async = true } end) -- format file
-
 
 -- Debug
 key_map("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<CR>") -- set breakpoint
