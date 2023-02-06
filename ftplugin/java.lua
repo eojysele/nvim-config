@@ -32,7 +32,7 @@ local config = {
 
         capabilities = capabilities,
         on_attach = on_attach,
-  
+
         init_options = {
             bundles = bundles
         },
@@ -61,11 +61,11 @@ local config = {
                         profile = "GoogleStyle",
                     },
                 },
-                signatureHelp = { 
-                    enabled = true 
+                signatureHelp = {
+                    enabled = true
                 },
-                contentProvider = { 
-                    preferred = 'fernflower' 
+                contentProvider = {
+                    preferred = 'fernflower'
                 },
                 completion = {
                     favoriteStaticMembers = {

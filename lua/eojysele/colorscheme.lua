@@ -7,7 +7,7 @@ require("catppuccin").setup({
     integrations = {
         treesitter = true,
         symbols_outline = true,
-    },    
+    },
 })
 
 local status, _ = pcall(vim.cmd, "colorscheme catppuccin")

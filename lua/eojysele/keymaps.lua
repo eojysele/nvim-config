@@ -93,7 +93,7 @@ end
 -- Spring Boot App
 local spring_app = require('eojysele.auxiliary-scripts.language.java.run-spring-app')
 key_map("n", "<leader>da", function() spring_app.attach_to_debug() end) -- attach to debug
-key_map("n", "<F9>", function() spring_app.run_spring_boot() end) 
+key_map("n", "<F9>", function() spring_app.run_spring_boot() end)
 key_map("n", "<F10>", function() spring_app.run_spring_boot(true) end) -- run in debug
 
 return P

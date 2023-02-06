@@ -36,8 +36,8 @@ return packer.startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
-    use {'akinsho/bufferline.nvim', 
-        tag = "v3.*", 
+    use {'akinsho/bufferline.nvim',
+        tag = "v3.*",
         requires = 'nvim-tree/nvim-web-devicons'
     }
 
@@ -48,16 +48,16 @@ return packer.startup(function(use)
             ts_update()
         end,
     }
-    use { 
+    use {
         'nvim-tree/nvim-tree.lua',
         requires = {
             'nvim-tree/nvim-web-devicons',
         }
-    }  
+    }
     use "lukas-reineke/indent-blankline.nvim"
     use {'lewis6991/gitsigns.nvim'}
-    use { 'sindrets/diffview.nvim', 
-        requires = 'nvim-lua/plenary.nvim' 
+    use { 'sindrets/diffview.nvim',
+        requires = 'nvim-lua/plenary.nvim'
     }
     use 'simrat39/symbols-outline.nvim'
 
@@ -66,7 +66,7 @@ return packer.startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-  
+
     use 'neovim/nvim-lspconfig'
     use "williamboman/mason-lspconfig.nvim"
 
