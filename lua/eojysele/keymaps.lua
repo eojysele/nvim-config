@@ -84,10 +84,11 @@ key_map("n", "<leader>fx", "<cmd>Telescope diagnostics bufnr=0<CR>") -- Find imp
 
 -- Java
 function P.java_key_map(bufnr)
-    key_map("n", "<C-o>", jdtls.organize_imports) -- organize imports
-    key_map("n", "<leader>ev", jdtls.extract_variable) -- extract variable
-    key_map("n", "<leader>ec", jdtls.extract_constant) -- extract constant
-    key_map("v", "<leader>em", [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]]) -- extract method
+    local jdtls = require("jdtls")
+    key_map("n", "<leader>oi", jdtls.organize_imports) -- organize imports
+    key_map("n", "<leader>ve", jdtls.extract_variable) -- extract variable
+    key_map("n", "<leader>ce", jdtls.extract_constant) -- extract constant
+    key_map("v", "<leader>me", [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]]) -- extract method
 end
 
 -- Spring Boot App
