@@ -19,18 +19,4 @@ function P.run_spring_boot(debug)
     vim.cmd('term ' .. get_spring_boot_runner(method_name, debug))
 end
 
-function P.attach_to_debug()
-    local dap = require("dap")
-    dap.configurations.java = {
-        {
-            type = 'java';
-            request = 'attach';
-            name = "Attach to the process";
-            hostName = 'localhost';
-            port = '5005';
-        },
-    }
-    dap.continue()
-end
-
 return P

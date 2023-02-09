@@ -7,7 +7,8 @@ local path_to_config = jdtls_path .. "/config_mac"
 local path_to_plugins = jdtls_path .. "/plugins"
 local path_to_jar_jdtls = path_to_plugins .. "/org.eclipse.equinox.launcher_*.jar"
 local path_to_lombok = jdtls_path .. "/lombok.jar"
-
+local java_debug_path = nvim_home .. "/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"
+local java_test_path = nvim_home .. "/mason/packages/java-test/extension/server/*.jar"
 
 local root_markers = {'gradlew', 'mvnw', '.git'}
 local root_dir = require('jdtls.setup').find_root(root_markers)
@@ -19,8 +20,10 @@ local on_attach = function(client, bufnr)
 end
 
 local bundles = {
-    vim.fn.glob(home ..'/Code/Instruments/Nvim/Java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar'),
+    vim.fn.glob(java_debug_path),
 }
+
+vim.list_extend(bundles, vim.split(vim.fn.glob(java_test_path, 1), "\n"))
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)

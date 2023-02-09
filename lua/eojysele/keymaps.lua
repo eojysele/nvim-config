@@ -5,7 +5,7 @@ vim.g.mapleader = " "
 
 -- key_mapping --
 local key_map = function(mode, key, result)
-    vim.keymap.set(mode,key, result)
+    vim.keymap.set(mode, key, result)
 end
 
 --------------------------
@@ -61,14 +61,13 @@ key_map("n", "<leadet>dd", "<cmd>lua require'dap'.disconnect()<CR>") -- disconne
 key_map("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<CR>") -- terminate
 key_map("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<CR>") -- open REPL
 key_map("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<CR>") -- run last
-key_map("n", "<leader>di", function() require"dap.ui.widgets".hover() end) -- variables
-key_map("n", "<leader>d/", function() local widgets=require"dap.ui.widgets";widgets.centered_float(widgets.scopes) end) -- scopes
+key_map("n", "<leader>di", function() require "dap.ui.widgets".hover() end) -- variables
+key_map("n", "<leader>d/", function() local widgets = require "dap.ui.widgets"; widgets.centered_float(widgets.scopes) end) -- scopes
 key_map("n", "<leader>df", "<cmd>Telescope dap frames<CR>") -- list frames
 key_map("n", "<leader>dh", "<cmd>Telescope dap commands<CR>") -- list commands
 
 -- Searching
 key_map("n", "<leader>ff", "<cmd>Telescope find_files<CR>") -- find file
-key_map("n", "<leader>fg", "<cmd>Telescope live_grep<CR") -- "grep"
 key_map("n", "<leader>fb", "<cmd>Telescope buffers<CR>") -- find buffer
 key_map("n", "<leader>fm", "<cmd>Telescope marks<CR>") -- find mark
 key_map("n", "<leader>fr", "<cmd>Telescope lsp_references<CR>") -- find references
@@ -89,12 +88,14 @@ function P.java_key_map(bufnr)
     key_map("n", "<leader>ve", jdtls.extract_variable) -- extract variable
     key_map("n", "<leader>ce", jdtls.extract_constant) -- extract constant
     key_map("v", "<leader>me", [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]]) -- extract method
-end
+    key_map("n", "<leader>tc", jdtls.test_class) -- test class
+    key_map("n", "<leader>tm", jdtls.test_nearest_method) -- test method
 
--- Spring Boot App
-local spring_app = require('eojysele.auxiliary-scripts.language.java.run-spring-app')
-key_map("n", "<leader>da", function() spring_app.attach_to_debug() end) -- attach to debug
-key_map("n", "<F9>", function() spring_app.run_spring_boot() end)
-key_map("n", "<F10>", function() spring_app.run_spring_boot(true) end) -- run in debug
+    -- Spring Boot App
+    local spring_app = require('eojysele.auxiliary-scripts.language.java.run-spring-app')
+    key_map("n", "<F9>", function() spring_app.run_spring_boot() end)
+    key_map("n", "<F10>", function() spring_app.run_spring_boot(true) end) -- run in debug
+
+end
 
 return P
