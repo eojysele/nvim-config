@@ -1,17 +1,11 @@
 # My Neovim Config
 
-## jdtls 
+## Пакеты из Mason 
 
-Jdtls устанавливается с помощью плагина mason
-
-## Debug для JAVA
-
-```shell
-git clone git@github.com:microsoft/java-debug.git
-
-cd java-debug
-
-./mvnw clean install
-```
-
+1. jdtls
+2. java-debug-adapter
+3. java-test
+4. lua-language-server
+5. html-lsp
+6. marksman
 
