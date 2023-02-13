@@ -2,7 +2,7 @@
 require'lspconfig'.marksman.setup{}
 
 --Lua
-require'lspconfig'.sumneko_lua.setup{}
+require'lspconfig'.lua_ls.setup{}
 
 --HTML
 local capabilities = vim.lsp.protocol.make_client_capabilities()
