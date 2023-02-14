@@ -10,7 +10,7 @@ require("lualine").setup {
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = {
             { 'filename',
-                path = 1,
+                path = 0,
                 symbols = {
                     modified = '',
                     readonly = '',
