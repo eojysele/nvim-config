@@ -7,7 +7,17 @@ require("lualine").setup {
     },
     sections = {
         lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff', 'diagnostics' },
+        lualine_b = { 'branch', 'diff',
+            { 'diagnostics',
+                symbols = {
+                    error = ' ',
+                    warn = ' ',
+                    info = ' ',
+                    hint = ' '
+                },
+
+            }
+        },
         lualine_c = {
             { 'filename',
                 path = 0,
